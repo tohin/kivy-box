@@ -1,14 +1,20 @@
 name: kivy
 version: 0.0.1
-inherits: wercker/python
+inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type: main
 platform: ubuntu@12.04
 description: wercker box for kivy
 keywords:
   - python
   - kivy
+packages :
+  - python@2.7.3
+  - python@3.2.3
+  - setuptools@3.4.4
+  - pip@1.5.5
+  - virtualenv@1.11.5
+  - wheel@0.23.0
 script: |
-  sudo add-apt-repository ppa:kivy-team/kivy
+  sudo add-apt-repository -y ppa:kivy-team/kivy
   sudo apt-get update -y
   sudo apt-get install python-kivy -y
-
